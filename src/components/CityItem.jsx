@@ -11,8 +11,7 @@ const formatDate = (date) =>
 
 function CityItem({ city }) {
     const { currentCity } = useCities();
-    const { cityName, date, id, position } = city || {};
-    const emoji = '🏴';
+    const { cityName, emoji, date, id, position } = city || {};
     return (
         <li>
             <Link

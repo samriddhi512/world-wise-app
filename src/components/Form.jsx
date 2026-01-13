@@ -32,7 +32,7 @@ function Form() {
   const [notes, setNotes] = useState("");
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [geocodingError, setGeocodingError] = useState("");
-  // const [emoji, setEmoji] = useState("");
+  const [emoji, setEmoji] = useState("");
   const [lat, lng] = useUrlPosition();
 
   useEffect(function () {
@@ -48,6 +48,7 @@ function Form() {
         }
         setCityName(data.city);
         setCountryName(data.countryName);
+        setEmoji(convertToEmoji(data.countryCode));
       } catch (err) {
         setGeocodingError(err.message);
       } finally {
@@ -58,14 +59,14 @@ function Form() {
   }, [lat, lng])
 
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (!cityName || !date) return;
 
     const newCity = {
       cityName,
-      countryName,
-      emoji: '🏳️‍🌈',
+      country: countryName,
+      emoji,
       date,
       notes,
       position: {
@@ -73,7 +74,8 @@ function Form() {
       }
     };
 
-    createCity(newCity);
+    await createCity(newCity);
+    navigate("/app/cities");
   }
 
   if (geocodingError) return <Message message={geocodingError} />
@@ -88,12 +90,12 @@ function Form() {
           onChange={(e) => setCityName(e.target.value)}
           value={cityName}
         />
-        {/* <span className={styles.flag}>{emoji}</span> */}
+        <span className={styles.flag}>{emoji}</span>
       </div>
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        <DatePicker id="date" onChange={date => setDate(date)} value={date} dateFormat={"dd/MM/yyyy"} />
+        <DatePicker id="date" onChange={date => setDate(date)} selected={date} dateFormat={"dd/MM/yyyy"} />
 
       </div>
 
