@@ -11,14 +11,14 @@ function CountryList() {
     if (isLoading) return <Spinner />
     if (cities.length == 0) return <Message message="Add your first city by clicking a city on the map" />
     const countries = cities.reduce((arr, city) => {
-        if (!arr.includes(city.country)) arr.push(city.country);
+        if (!arr.map((c) => c.country).includes(city.country))
+            arr.push({ country: city.country, emoji: city.emoji });
         return arr;
-    }, [])
-    console.log(countries)
+    }, []);
     return (
         <ul className={styles.countryList}>
-            {countries.map((country, index) => {
-                return <CountryItem country={country} key={index} />
+            {countries.map((country) => {
+                return <CountryItem country={country} key={country.country} />
             })}
         </ul>
     )

@@ -11,17 +11,18 @@ export default function Product() {
           alt="person with dog overlooking mountain with sunset"
         />
         <div>
-          <h2>About WorldWide.</h2>
+          <h2>About WorldWise.</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est
-            dicta illum vero culpa cum quaerat architecto sapiente eius non
-            soluta, molestiae nihil laborum, placeat debitis, laboriosam at fuga
-            perspiciatis?
+            WorldWise is your personal travel companion that helps you track and
+            remember every adventure. Whether you're exploring bustling cities
+            or remote villages, our interactive map makes it easy to log your
+            journeys and cherish your memories.
           </p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            doloribus libero sunt expedita ratione iusto, magni, id sapiente
-            sequi officiis et.
+            Simply click anywhere on the map to add a city, record the date of
+            your visit, and add personal notes about your experience. Share your
+            travel story with friends and never forget the places that shaped
+            your journey.
           </p>
         </div>
       </section>
