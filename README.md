@@ -1,6 +1,13 @@
 # 🌍 WorldWise
 
-> **A travel tracking app with interactive maps to log your adventures around the world.**
+
+---
+**A travel tracking app with interactive maps to log your adventures around the world.**
+
+ 🎥 **DEMO (CLICK TO WATCH)**
+👉👉👉 **[WATCH THE DEMO VIDEO](https://drive.google.com/file/d/1z5w8Tn7-M-YO0z3JqA1yxO0-bRrfU95O/view?usp=drive_link)**
+
+---
 
 A modern travel tracking application that helps you keep track of your adventures around the world. WorldWise provides an interactive world map where you can mark cities you've visited, add notes about your experiences, and visualize your travel history.
 
